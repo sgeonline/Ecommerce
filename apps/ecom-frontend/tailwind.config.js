@@ -8,7 +8,40 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
+    fontFamily: {
+      sans: ['Inter var', 'ui-sans-serif', 'system-ui'],
+      serif: ['Inter var', 'ui-serif', 'Georgia'],
+    },
+    fontSize: {
+      sm: '0.875rem',
+      base: '1.3rem',
+      xl: '1.55rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+    },
     extend: {},
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        fantasy: {
+          primary: '#0000ff',
+          'primary-content': 'white',
+          secondary: '#F6F6F6',
+        },
+      },
+    ],
+    base: true,
+    styled: true,
+    utils: true,
+    prefix: '',
+    logs: true,
+    themeRoot: ':root'
+  },
+  plugins: [
+    require('@tailwindcss/typography'), // Para tipografia
+    require('daisyui'), // Para usar o DaisyUI
+  ],
 };
